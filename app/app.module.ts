@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule  } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 
@@ -9,7 +10,8 @@ import {
   EventDetailsComponent,
   CreateEventComponent,
   EventRouteActivatorService,
-  EventsListResolverService
+  EventsListResolverService,
+  CreateSessionComponent
 } from './events/index';
 
 import { EventsAppComponent } from './events-app.component';
@@ -26,6 +28,8 @@ import { RouterModule } from "@angular/router";
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   declarations: [
@@ -35,7 +39,9 @@ import { RouterModule } from "@angular/router";
     NavComponent,
     EventDetailsComponent,
     CreateEventComponent,
-    Error404Component],
+    Error404Component,
+    CreateSessionComponent
+  ],
   providers: [
     EventService,
     ToastrService,

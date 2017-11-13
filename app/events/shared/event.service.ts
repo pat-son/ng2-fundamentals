@@ -7,14 +7,20 @@ export class EventService {
 
   constructor() { }
 
-  getEvents(): Observable<IEvent[]> {
+  getEvents(): Subject<IEvent[]> {
     let subject = new Subject<IEvent[]>();
-    setTimeout(() => {subject.next(EVENTS); subject.complete();}, 100)
+    setTimeout(() => {subject.next(EVENTS); subject.complete();}, 1)
     return subject;
   }
 
   getEvent(id: number): IEvent {
     return EVENTS.find(event => event.id === id);
+  }
+
+  saveEvent(event) {
+    event.id = 999;
+    event.sessions = [];
+    EVENTS.push(event);
   }
 }
 
