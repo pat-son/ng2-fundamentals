@@ -11,7 +11,8 @@ import {
   CreateEventComponent,
   EventRouteActivatorService,
   EventsListResolverService,
-  CreateSessionComponent
+  CreateSessionComponent,
+  SessionListComponent
 } from './events/index';
 
 import { EventsAppComponent } from './events-app.component';
@@ -40,7 +41,8 @@ import { RouterModule } from "@angular/router";
     EventDetailsComponent,
     CreateEventComponent,
     Error404Component,
-    CreateSessionComponent
+    CreateSessionComponent,
+    SessionListComponent
   ],
   providers: [
     EventService,
